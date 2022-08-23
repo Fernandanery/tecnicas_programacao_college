@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--Faça uma página na qual o aluno informe duas notas obtidas em uma disciplina. O sistema deve calcular a média das notas, informar se o aluno está aprovado ou reprovado e exibir algumas imagens conforme resultado. Observação: Para ser aprovado a média precisa ser maior ou igual a 6.-->
+    <title>Aula 2 - Cálculo de media</title>
+</head>
+
+<body>
+    <span>Nota1: </span><input type="number" id="n1"><br><br>
+    <span>Nota2: </span><input type="number" id="n2"><br><br>
+
+    <input type="button" value="Calcular" onclick="calcular_media()"/><br>
+
+    <p>Sua média é <span id="result">-</span></p>
+
+    <img id="imgResult" style="width: 130px; height: 150px;">
+
+    <script>
+        function calcular_media(){
+            var num1  = Number(document.querySelector("#n1").value);
+            var num2  = Number(document.querySelector("#n2").value);
+            var media = (num1 + num2) / 2;
+
+            document.querySelector("#result").innerText = media.toFixed(2);
+
+            if (media>=6){
+                document.querySelector("#imgResult").src="img2_aula2/aprovado.jpg";
+            }else{
+                document.getElementById("imgResult").src="img2_aula2/reprovado.jpg";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+</html>
